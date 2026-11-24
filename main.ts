@@ -8,6 +8,10 @@ const JOKE =
   "My out-of-office says I'm on holiday, my calendar says I'm in a meeting — my boss trusts the calendar, so I'm answering emails from the beach.";
 
 // Honour the harness output dir when set, else the standard /output.
-const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
-mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, "entry.txt"), JOKE, "utf8");
+function main(): void {
+  const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+  mkdirSync(outDir, { recursive: true });
+  writeFileSync(join(outDir, "entry.txt"), JOKE, "utf8");
+}
+
+main();
